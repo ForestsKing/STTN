@@ -106,6 +106,7 @@ class EXP:
         self.model.load_state_dict(torch.load(self.modelpath))
 
     def test(self):
+        self.model.load_state_dict(torch.load(self.modelpath, map_location=self.device))
         self.model.eval()
         with torch.no_grad():
             trues, preds = [], []
@@ -118,4 +119,4 @@ class EXP:
 
         mae = np.mean(np.abs(preds - trues))
         mse = np.mean((preds - trues) ** 2)
-        print('Test: MSE:{0:.4f}, MAE:{1:.6f}'.format(mse, mae))
+        print('Test: MSE:{0:.6f}, MAE:{1:.6f}'.format(mse, mae))
