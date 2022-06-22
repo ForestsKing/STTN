@@ -16,7 +16,7 @@ from utils.getdata import get_data
 
 
 class EXP:
-    def __init__(self, his_len=12, pre_len=15, lr=0.001, batch_size=32, epochs=10, patience=3):
+    def __init__(self, his_len=12, pre_len=15, lr=0.0001, batch_size=32, epochs=1, patience=3):
         self.his_len = his_len
         self.pre_len = pre_len
 

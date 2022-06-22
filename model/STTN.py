@@ -24,7 +24,7 @@ class STBlock(nn.Module):
 
 class STTN(nn.Module):
     def __init__(self, d_k=32, d_v=32, d_feature=1, d_model=64, len_his=12, len_pred=12, n_heads=8, n_nodes=25,
-                 n_layers=3, dropout=0.2, adj=None):
+                 n_layers=5, dropout=0.2, adj=None):
         super(STTN, self).__init__()
 
         self.embed = Embedding(d_feature=d_feature, d_model=d_model)
